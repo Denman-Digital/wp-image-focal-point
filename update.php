@@ -41,7 +41,7 @@ class Image_Focal_Point_Update
 
 	public function get_remote_plugin_data(): array
 	{
-		$remote_plugin_data = get_plugin_data($this->remote_plugin_endpoint_base . IFP_PLUGIN_FILE);
+		$remote_plugin_data = get_plugin_data($this->remote_plugin_endpoint_base . IFP_PLUGIN_FILE, true, false);
 		if (!$remote_plugin_data) return [];
 		return [
 			"slug" => "image-focal-point",
@@ -111,7 +111,7 @@ class Image_Focal_Point_Update
 			&& !$this->did_fetch_remote_data
 		) {
 			$remote_data = (object) $this->get_remote_plugin_data();
-			$local_data = get_plugin_data(IFP_PLUGIN_PATH . "plugin.php");
+			$local_data = get_plugin_data(IFP_PLUGIN_PATH . "plugin.php", true, false);
 
 			if (version_compare($remote_data->new_version, $local_data['Version'], '>')) {
 				$transient->response[IFP_PLUGIN_BASENAME] = $remote_data;
@@ -132,7 +132,7 @@ class Image_Focal_Point_Update
 			return $result;
 		}
 
-		$local_data = get_plugin_data(IFP_PLUGIN_PATH . "plugin.php");
+		$local_data = get_plugin_data(IFP_PLUGIN_PATH . "plugin.php", true, false);
 
 		$result = (object) $result;
 
