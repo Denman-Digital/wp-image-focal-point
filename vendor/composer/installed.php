@@ -3,7 +3,7 @@
         'name' => 'denmandigital/image-focal-point',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'fb93e02902a29a25073768a232d96f9e2c3e4125',
+        'reference' => 'e3725e11765179fecf641bbd4249f740923ad58a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'denmandigital/image-focal-point' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'fb93e02902a29a25073768a232d96f9e2c3e4125',
+            'reference' => 'e3725e11765179fecf641bbd4249f740923ad58a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

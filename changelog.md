@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.3.6
+
+- fix: don't load textdomain too early
+
 ## v2.3.5
 
 - fix: update PHP dependencies
