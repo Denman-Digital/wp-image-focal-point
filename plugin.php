@@ -7,7 +7,7 @@
  * Description: Set background focus position for media images.
  * Author: Denman Digital
  * Author URI: https://denman.digital/
- * Version: 2.3.6
+ * Version: 2.3.7
  * Tested up to: 6.8
  * Requires at least: 6.0
  * Requires PHP: 8.1

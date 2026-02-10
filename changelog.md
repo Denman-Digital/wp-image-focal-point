@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.3.7
+
+- new: integrate focal point into WPGraphQL MediaItem fields
+
 ## v2.3.6
 
 - fix: don't load textdomain too early

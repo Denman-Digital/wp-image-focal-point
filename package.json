@@ -1,7 +1,7 @@
 {
 	"name": "image-focal-point",
 	"displayName": "Image Focal Point",
-	"version": "2.3.6",
+	"version": "2.3.7",
 	"private": true,
 	"author": "Denman Digital",
 	"description": "Set background focus position for media images in WordPress.",
