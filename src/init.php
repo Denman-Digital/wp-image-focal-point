@@ -160,7 +160,7 @@ add_filter('wp_prepare_attachment_for_js', __NAMESPACE__ . '\filter_wp_prepare_a
  * @since 2.3.0
  * @since 2.3.4 Support for Gallery fields by targeting acf_get_attachment ACF API helper.
  * @param array $value acf_get_attachment response.
- * @return array Field value
+ * @return array acf_get_attachment response with focal point data added.
  */
 function filter_acf_image_integrate_image_focal_point(array $value): array
 {
@@ -169,6 +169,23 @@ function filter_acf_image_integrate_image_focal_point(array $value): array
 }
 add_filter("acf/load_attachment", __NAMESPACE__ . '\filter_acf_image_integrate_image_focal_point', 11);
 
+/**
+ * Integrate this plugin with WPGraphQL for Media fields.
+ * @since 2.3.7
+ */
+function register_graphql_media_item_focal_point_field(): void
+{
+	if (!function_exists('register_graphql_field')) {
+		return;
+	}
+	register_graphql_field('mediaItem', 'focalPoint', [
+		'type' => "String",
+		'resolve' => function ($mediaItem): string {
+			return get_focal_point_post_meta($mediaItem->ID);
+		}
+	]);
+}
+add_action('graphql_register_types',  __NAMESPACE__ . '\register_graphql_media_item_focal_point_field');
 
 /**
  * Enqueue script in Admin
